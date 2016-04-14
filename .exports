@@ -25,7 +25,7 @@ export PATH=$PATH:/Applications/MAMP/bin/php/php5.4.10/bin
 export THEOS=/opt/theos
 
 #Brew
-export HOMEBREW_GITHUB_API_TOKEN=ec5845e7e480684a13ce6350b133c3047baf145c
+export HOMEBREW_GITHUB_API_TOKEN=
 
 #CocoaPods
 export POD_LOCAL_HOME=~/Development/PodsLocal
