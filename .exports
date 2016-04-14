@@ -13,24 +13,7 @@ export GREP_OPTIONS="--color=auto"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Android
-export PATH=$PATH:~/Development/Android/android-ndk-r9c
-export PATH=$PATH:~/Development/Android/apache-ant-1.9.2/bin
-export PATH=$PATH:~/Development/Android/apache-ant-1.9.4/bin
-export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
-
-ANDROID_HOME_DIR=~/Development/Android/adt-bundle-mac-x86_64-20130917/sdk
-if [ -d "$ANDROID_HOME_DIR" ]; then
-	export ANDROID_HOME=$ANDROID_HOME_DIR
-	export PATH=$PATH:$ANDROID_HOME_DIR/platform-tools
-	export PATH=$PATH:$ANDROID_HOME_DIR/tools
-fi
-
-ANDROID_HOME_DIR=~/Development/Android/adt-bundle-mac-x86_64-20140321/sdk
-if [ -d "$ANDROID_HOME_DIR" ]; then
-	export ANDROID_HOME=$ANDROID_HOME_DIR
-	export PATH=$PATH:$ANDROID_HOME_DIR/platform-tools
-	export PATH=$PATH:$ANDROID_HOME_DIR/tools
-fi
+export ANDROID_HOME=~/Library/Android/sdk
 
 #Emscripten
 export PATH=$PATH:/opt/emsdk_portable:/opt/emsdk_portable/clang/e1.16.0_64bit:/opt/emsdk_portable/node/0.10.18_64bit/bin:/opt/emsdk_portable/emscripten/1.16.0
@@ -40,6 +23,9 @@ export PATH=$PATH:/Applications/MAMP/bin/php/php5.4.10/bin
 
 #Misc
 export THEOS=/opt/theos
+
+#Brew
+export HOMEBREW_GITHUB_API_TOKEN=ec5845e7e480684a13ce6350b133c3047baf145c
 
 #CocoaPods
 export POD_LOCAL_HOME=~/Development/PodsLocal
