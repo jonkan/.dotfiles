@@ -53,7 +53,7 @@ plugins=(git zsh-syntax-highlighting)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/jonasbromo/Development/Android/android-ndk-r9c:/Users/jonasbromo/Development/Android/apache-ant-1.9.2/bin:/Users/jonasbromo/Development/Android/apache-ant-1.9.4/bin:/Users/jonasbromo/Development/Android/adt-bundle-mac-x86_64-20140321/sdk/platform-tools:/Users/jonasbromo/Development/Android/adt-bundle-mac-x86_64-20140321/sdk/tools:/opt/emsdk_portable:/opt/emsdk_portable/clang/e1.16.0_64bit:/opt/emsdk_portable/node/0.10.18_64bit/bin:/opt/emsdk_portable/emscripten/1.16.0:/Applications/MAMP/bin/php/php5.4.10/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load the dotfiles
-for file in ~/.dotfiles/.{exports,aliases,functions}; do
+for file in ~/.dotfiles/.{exports,aliases,functions,private}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file

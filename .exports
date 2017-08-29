@@ -15,17 +15,31 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Android
 export ANDROID_HOME=~/Library/Android/sdk
 
-#Emscripten
+# Emscripten
 export PATH=$PATH:/opt/emsdk_portable:/opt/emsdk_portable/clang/e1.16.0_64bit:/opt/emsdk_portable/node/0.10.18_64bit/bin:/opt/emsdk_portable/emscripten/1.16.0
 
-#PHP
+# PHP
 export PATH=$PATH:/Applications/MAMP/bin/php/php5.4.10/bin
 
-#Misc
-export THEOS=/opt/theos
-
-#Brew
-export HOMEBREW_GITHUB_API_TOKEN=
-
-#CocoaPods
+# CocoaPods
 export POD_LOCAL_HOME=~/Development/PodsLocal
+
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Serverless
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# Ruby
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/shims:$PATH"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Misc
+export THEOS=/opt/theos
