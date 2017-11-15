@@ -96,3 +96,11 @@ function fs() {
     du $arg .[^.]* *
   fi
 }
+
+codef() {  # short for cdfinder
+  code "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
+atomf() {  # short for cdfinder
+  atom "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
