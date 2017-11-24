@@ -51,6 +51,9 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-syntax-highlighting)
 
+# Ignore ORIG_HEAD from git-completion
+zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
+
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
