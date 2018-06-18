@@ -15,7 +15,7 @@ alias find-big-files="find . -type f -print0 | xargs -0 stat -f '%z %N%n' | sort
 alias ga="git add"
 alias gb="git branch"
 alias go="git checkout"
-alias gl="git lg"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias glo="git log --oneline"
 alias gd="git diff"
 alias gs="git status"
