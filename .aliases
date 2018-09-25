@@ -10,6 +10,7 @@ alias cd...="cd ../../.."
 alias ls='ls -FlGo'
 alias lsd="ls -alFG | grep '^d'"
 alias find-big-files="find . -type f -print0 | xargs -0 stat -f '%z %N%n' | sort -nr | head -n 20"
+alias ls-bonjour-ssh="dns-sd -B _ssh._tcp ."
 
 # Git
 alias ga="git add"
