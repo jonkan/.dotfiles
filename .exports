@@ -22,7 +22,7 @@ export PATH=$PATH:/opt/emsdk_portable:/opt/emsdk_portable/clang/e1.16.0_64bit:/o
 export PATH=$PATH:/Applications/MAMP/bin/php/php5.4.10/bin
 
 # CocoaPods
-export POD_LOCAL_HOME=~/Development/PodsLocal
+export POD_LOCAL_HOME=~/Development
 
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
