@@ -104,3 +104,39 @@ codef() {  # short for cdfinder
 atomf() {  # short for cdfinder
   atom "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
+
+ipa_info() {
+  echo "Download ipa_info.json"
+  pushd ~/Development/tools/PPBuildAgent
+  bundle exec fastlane download_ipa_info version_number:$1
+  popd
+}
+
+ddsym() {
+  echo "Download dSYM"
+  cwd=$(pwd)
+  did_pushd=false
+  if [[ "PPBuildAgent" != "$(basename $(pwd))" ]]; then
+    did_pushd=true
+    pushd ~/Development/tools/PPBuildAgent
+  fi
+  bundle exec fastlane download_dsym version_number:$1
+  if [ "$did_pushd" = true ]; then
+    mv *.app.dSYM.zip ${cwd}/
+    popd
+  fi
+}
+
+edsym() {
+  cwd=$(pwd)
+  did_pushd=false
+  if [[ "PPBuildAgent" != "$(basename $(pwd))" ]]; then
+    did_pushd=true
+    pushd ~/Development/tools/PPBuildAgent
+  fi
+  bundle exec fastlane extract_dsym uuid:$1
+  if [ "$did_pushd" = true ]; then
+    mv *.dSYM.zip ${cwd}/
+    popd
+  fi
+}
