@@ -13,7 +13,10 @@ export GREP_OPTIONS="--color=auto"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Android
-export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export JAVA_HOME=$(/usr/libexec/java_home --version 17)
 
 # Emscripten
 export PATH=$PATH:/opt/emsdk_portable:/opt/emsdk_portable/clang/e1.16.0_64bit:/opt/emsdk_portable/node/0.10.18_64bit/bin:/opt/emsdk_portable/emscripten/1.16.0
@@ -43,3 +46,13 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Misc
 export THEOS=/opt/theos
+
+# pnpm
+export PNPM_HOME="/Users/jonasbromo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
