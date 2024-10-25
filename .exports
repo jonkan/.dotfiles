@@ -59,3 +59,10 @@ esac
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+GOOGLE_CLOUD_SDK_HOME="$HOME/Development/misc/google-cloud-sdk"
+if [ -f "$GOOGLE_CLOUD_SDK_HOME/path.zsh.inc" ]; then . "$GOOGLE_CLOUD_SDK_HOME/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$GOOGLE_CLOUD_SDK_HOME/completion.zsh.inc" ]; then . "$GOOGLE_CLOUD_SDK_HOME/completion.zsh.inc"; fi
