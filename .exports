@@ -44,6 +44,9 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# GPG (https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e)
+export GPG_TTY=$(tty)
+
 # Misc
 export THEOS=/opt/theos
 
