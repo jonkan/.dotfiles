@@ -39,3 +39,6 @@ alias preview="open -a Preview"
 alias f="open -a Finder"
 alias sublime="/Applications/\"Sublime Text.app\"/Contents/SharedSupport/bin/subl"
 alias mvtinfo="python ~/Development/Tools/PPTools/MVTInfo/decode.py"
+
+# Misc
+alias swift-translate="swift run --package-path ~/Development/misc/swift-translate swift-translate"
