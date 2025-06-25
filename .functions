@@ -22,6 +22,48 @@ git_rm_all_gone_branches() {
     done
 }
 
+git_rm_tags_matching() {
+    pattern="$1"
+    if [[ -z "$pattern" ]]; then
+        echo "Usage: git_delete_tags_matching <pattern>"
+        return 1
+    fi
+
+    # Use an array to store tag names
+    tags=()
+    while IFS= read -r tag; do
+        [[ -n "$tag" ]] && tags+=("$tag")
+    done < <(git tag | grep "$pattern")
+
+    if [[ ${#tags[@]} -eq 0 ]]; then
+        echo "No tags matching '$pattern' found."
+        return 0
+    fi
+
+    echo "The following tags match '$pattern':"
+    for tag in "${tags[@]}"; do
+        echo "$tag"
+    done
+    echo
+    read "confirm?Would you like to delete these tags? (y/N): "
+    if [[ "$confirm" != [yY] ]]; then
+        echo "Aborted."
+        return 0
+    fi
+
+    # Delete local tags
+    for tag in "${tags[@]}"; do
+        git tag -d "$tag"
+    done
+
+    # Delete remote tags
+    for tag in "${tags[@]}"; do
+        git push origin ":refs/tags/$tag"
+    done
+
+    echo "Done."
+}
+
 # Extract most know archives with one command
 extract () {
   if [ -f $1 ] ; then
